@@ -13,7 +13,7 @@ This repository is an updated version of the RxFirebase 2 library by [FrangSierr
 
 ```groovy
 dependencies {
-  implementation 'com.github.FAITH-HoGent:RxFirebase:3.0'
+  implementation 'com.github.FAITH-HoGent:RxFirebase:3.1'
 }
 ```
 ```
