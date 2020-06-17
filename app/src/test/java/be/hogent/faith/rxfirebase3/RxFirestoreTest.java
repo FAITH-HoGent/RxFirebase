@@ -21,7 +21,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-import be.hogent.faith.database.rxfirebase3.RxFirestore;
 import io.reactivex.rxjava3.observers.TestObserver;
 
 import static be.hogent.faith.rxfirebase3.RxTestUtil.eventSnapshotListener;

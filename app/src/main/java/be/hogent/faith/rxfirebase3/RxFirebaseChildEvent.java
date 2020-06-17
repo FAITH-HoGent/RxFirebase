@@ -1,4 +1,4 @@
-package be.hogent.faith.database.rxfirebase3;
+package be.hogent.faith.rxfirebase3;
 
 
 import androidx.annotation.NonNull;

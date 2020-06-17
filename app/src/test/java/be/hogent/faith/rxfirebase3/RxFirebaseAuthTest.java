@@ -15,9 +15,6 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.util.Collections;
-
-import be.hogent.faith.database.rxfirebase3.RxFirebaseAuth;
 import io.reactivex.rxjava3.observers.TestObserver;
 
 import static be.hogent.faith.rxfirebase3.RxTestUtil.ANY_CODE;

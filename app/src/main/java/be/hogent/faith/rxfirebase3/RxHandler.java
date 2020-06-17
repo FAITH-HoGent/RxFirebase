@@ -1,4 +1,4 @@
-package be.hogent.faith.database.rxfirebase3;
+package be.hogent.faith.rxfirebase3;
 
 
 import androidx.annotation.NonNull;
@@ -8,7 +8,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
-import be.hogent.faith.database.rxfirebase3.exceptions.RxFirebaseNullDataException;
+import be.hogent.faith.rxfirebase3.exceptions.RxFirebaseNullDataException;
 import io.reactivex.rxjava3.core.MaybeEmitter;
 
 public class RxHandler<T> implements OnSuccessListener<T>, OnFailureListener, OnCompleteListener<T> {

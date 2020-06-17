@@ -16,16 +16,12 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import be.hogent.faith.database.rxfirebase3.DataSnapshotMapper;
-import be.hogent.faith.database.rxfirebase3.RxFirebaseChildEvent;
-import be.hogent.faith.database.rxfirebase3.RxFirebaseDatabase;
-import be.hogent.faith.database.rxfirebase3.exceptions.RxFirebaseDataException;
+import be.hogent.faith.rxfirebase3.exceptions.RxFirebaseDataException;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.observers.TestObserver;
 import io.reactivex.rxjava3.subscribers.TestSubscriber;

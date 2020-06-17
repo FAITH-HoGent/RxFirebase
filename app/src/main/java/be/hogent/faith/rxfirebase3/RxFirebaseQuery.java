@@ -1,4 +1,4 @@
-package be.hogent.faith.database.rxfirebase3;
+package be.hogent.faith.rxfirebase3;
 
 
 import androidx.annotation.NonNull;
@@ -14,9 +14,9 @@ import io.reactivex.rxjava3.core.Maybe;
 import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.functions.Function;
 
-import static be.hogent.faith.database.rxfirebase3.RxFirebaseDatabase.observeMultipleSingleValueEvent;
-import static be.hogent.faith.database.rxfirebase3.RxFirebaseDatabase.observeSingleValueEvent;
-import static be.hogent.faith.database.rxfirebase3.RxFirebaseDatabase.requestFilteredReferenceKeys;
+import static be.hogent.faith.rxfirebase3.RxFirebaseDatabase.observeMultipleSingleValueEvent;
+import static be.hogent.faith.rxfirebase3.RxFirebaseDatabase.observeSingleValueEvent;
+import static be.hogent.faith.rxfirebase3.RxFirebaseDatabase.requestFilteredReferenceKeys;
 
 /**
  * Basic builder to create Firebase queries based on filters from different {@link DatabaseReference references}.

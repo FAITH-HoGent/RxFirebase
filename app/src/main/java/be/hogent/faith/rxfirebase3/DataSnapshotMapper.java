@@ -1,4 +1,4 @@
-package be.hogent.faith.database.rxfirebase3;
+package be.hogent.faith.rxfirebase3;
 
 
 import com.google.firebase.database.DataSnapshot;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import be.hogent.faith.database.rxfirebase3.exceptions.RxFirebaseDataCastException;
+import be.hogent.faith.rxfirebase3.exceptions.RxFirebaseDataCastException;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.exceptions.Exceptions;
 import io.reactivex.rxjava3.functions.Function;

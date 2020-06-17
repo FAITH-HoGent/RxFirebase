@@ -8,7 +8,6 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import be.hogent.faith.database.rxfirebase3.RxFirebaseRemote;
 import io.reactivex.rxjava3.observers.TestObserver;
 
 import static be.hogent.faith.rxfirebase3.RxTestUtil.ANY_TIME;

@@ -1,4 +1,4 @@
-package be.hogent.faith.database.rxfirebase3;
+package be.hogent.faith.rxfirebase3;
 
 
 import android.app.Activity;
@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executor;
 
-import be.hogent.faith.database.rxfirebase3.exceptions.RxFirebaseNullDataException;
+import be.hogent.faith.rxfirebase3.exceptions.RxFirebaseNullDataException;
 import io.reactivex.rxjava3.core.BackpressureStrategy;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.CompletableEmitter;
@@ -46,8 +46,8 @@ import io.reactivex.rxjava3.functions.Cancellable;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
-import static be.hogent.faith.database.rxfirebase3.DocumentSnapshotMapper.DOCUMENT_EXISTENCE_PREDICATE;
-import static be.hogent.faith.database.rxfirebase3.DocumentSnapshotMapper.QUERY_EXISTENCE_PREDICATE;
+import static be.hogent.faith.rxfirebase3.DocumentSnapshotMapper.DOCUMENT_EXISTENCE_PREDICATE;
+import static be.hogent.faith.rxfirebase3.DocumentSnapshotMapper.QUERY_EXISTENCE_PREDICATE;
 
 public class RxFirestore {
 

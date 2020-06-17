@@ -1,4 +1,4 @@
-package be.hogent.faith.database.rxfirebase3;
+package be.hogent.faith.rxfirebase3;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -14,7 +14,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Iterator;
 import java.util.Map;
 
-import be.hogent.faith.database.rxfirebase3.exceptions.RxFirebaseDataException;
+import be.hogent.faith.rxfirebase3.exceptions.RxFirebaseDataException;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.BackpressureStrategy;
 import io.reactivex.rxjava3.core.Completable;
@@ -33,7 +33,7 @@ import io.reactivex.rxjava3.core.SingleOnSubscribe;
 import io.reactivex.rxjava3.functions.Cancellable;
 import io.reactivex.rxjava3.functions.Function;
 
-import static be.hogent.faith.database.rxfirebase3.DataSnapshotMapper.DATA_SNAPSHOT_EXISTENCE_PREDICATE;
+import static be.hogent.faith.rxfirebase3.DataSnapshotMapper.DATA_SNAPSHOT_EXISTENCE_PREDICATE;
 
 
 public class RxFirebaseDatabase {

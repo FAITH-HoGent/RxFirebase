@@ -12,7 +12,7 @@ import com.google.firebase.firestore.ListenerRegistration;
 import org.mockito.ArgumentCaptor;
 
 
-import be.hogent.faith.database.rxfirebase3.exceptions.RxFirebaseNullDataException;
+import be.hogent.faith.rxfirebase3.exceptions.RxFirebaseNullDataException;
 
 import static org.mockito.Mockito.when;
 

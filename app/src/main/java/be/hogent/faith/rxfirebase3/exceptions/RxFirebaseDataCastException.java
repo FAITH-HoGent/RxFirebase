@@ -1,4 +1,4 @@
-package be.hogent.faith.database.rxfirebase3.exceptions;
+package be.hogent.faith.rxfirebase3.exceptions;
 
 import io.reactivex.rxjava3.annotations.NonNull;
 

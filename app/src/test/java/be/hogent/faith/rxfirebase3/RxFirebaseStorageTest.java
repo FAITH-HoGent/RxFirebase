@@ -18,7 +18,6 @@ import org.mockito.MockitoAnnotations;
 import java.io.File;
 import java.io.InputStream;
 
-import be.hogent.faith.database.rxfirebase3.RxFirebaseStorage;
 import io.reactivex.rxjava3.observers.TestObserver;
 
 import static be.hogent.faith.rxfirebase3.RxTestUtil.NULL_FIREBASE_EXCEPTION;
