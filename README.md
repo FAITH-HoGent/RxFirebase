@@ -1,7 +1,8 @@
-# Rx2Firebase
-[Rxjava 2.0](https://github.com/ReactiveX/RxJava/tree/2.x) wrapper on Google's [Android Firebase](https://firebase.google.com/docs/android/setup?hl=es) library.
+# Rx3Firebase
+[Rxjava 3.0](https://github.com/ReactiveX/RxJava/tree/3.x) wrapper on Google's [Android Firebase](https://firebase.google.com/docs/android/setup?hl=es) library.
 
 This repository started as a personal usage of [Nick Moskalenko](https://github.com/nmoskalenko) RxFirebase library. You can check his work [here](https://github.com/nmoskalenko/RxFirebase).
+This repository is an updated version of the RxFirebase 2 library by [FrangSierra](https://github.com/FrangSierra/RxFirebase/).
 
 
 ## Download
@@ -10,7 +11,7 @@ This repository started as a personal usage of [Nick Moskalenko](https://github.
 
 ```groovy
 dependencies {
-  compile 'com.github.FrangSierra:RxFirebase:1.5.6'
+  implementation 'com.github.FAITH-HoGent:RxFirebase:3.0.0'
 }
 ```
 ```
