@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/FAITH-HoGent/RxFirebase.svg)](https://jitpack.io/#FAITH-HoGent/RxFirebase)
+
 # Rx3Firebase
 [Rxjava 3.0](https://github.com/ReactiveX/RxJava/tree/3.x) wrapper on Google's [Android Firebase](https://firebase.google.com/docs/android/setup?hl=es) library.
 
