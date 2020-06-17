@@ -8,8 +8,6 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.util.Collections;
-
 import be.hogent.faith.database.rxfirebase3.RxFirebaseRemote;
 import io.reactivex.rxjava3.observers.TestObserver;
 
@@ -50,9 +48,7 @@ public class RxFirebaseRemoteTest {
         verify(firebaseConfig).fetch(eq(ANY_TIME));
 
         fetchTestObserver.assertNoErrors()
-                .assertValueSet(Collections.singletonList(voidTask))
-                .assertComplete()
-                .dispose();
+                .assertComplete();
     }
 
     @Test
@@ -66,7 +62,6 @@ public class RxFirebaseRemoteTest {
         verify(firebaseConfig).fetch(eq(ANY_TIME));
 
         fetchTestObserver.assertError(EXCEPTION)
-                .assertNotComplete()
-                .dispose();
+                .assertNotComplete();
     }
 }

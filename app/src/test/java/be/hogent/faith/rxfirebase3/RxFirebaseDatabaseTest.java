@@ -26,6 +26,7 @@ import be.hogent.faith.database.rxfirebase3.DataSnapshotMapper;
 import be.hogent.faith.database.rxfirebase3.RxFirebaseChildEvent;
 import be.hogent.faith.database.rxfirebase3.RxFirebaseDatabase;
 import be.hogent.faith.database.rxfirebase3.exceptions.RxFirebaseDataException;
+import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.observers.TestObserver;
 import io.reactivex.rxjava3.subscribers.TestSubscriber;
 
@@ -103,9 +104,8 @@ public class RxFirebaseDatabaseTest {
 
         testObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(childData))
-                .assertComplete()
-                .dispose();
+                .assertValue(childData)
+                .assertComplete();
     }
 
     @Test
@@ -123,8 +123,7 @@ public class RxFirebaseDatabaseTest {
         argument.getValue().onDataChange(mockFirebaseDataSnapshotNoData);
 
         testObserver.assertValueCount(0)
-                .assertComplete()
-                .dispose();
+                .assertComplete();
     }
 
     @Test
@@ -139,8 +138,7 @@ public class RxFirebaseDatabaseTest {
         argument.getValue().onDataChange(dataSnapshot);
 
         testObserver.assertError(RuntimeException.class)
-                .assertNotComplete()
-                .dispose();
+                .assertNotComplete();
     }
 
     @Test
@@ -155,8 +153,7 @@ public class RxFirebaseDatabaseTest {
         argument.getValue().onCancelled(DatabaseError.fromCode(DatabaseError.DISCONNECTED));
 
         testObserver.assertError(RxFirebaseDataException.class)
-                .assertNotComplete()
-                .dispose();
+                .assertNotComplete();
     }
 
     @Test
@@ -171,8 +168,7 @@ public class RxFirebaseDatabaseTest {
         argument.getValue().onCancelled(DatabaseError.fromCode(DatabaseError.OPERATION_FAILED));
 
         testObserver.assertError(RxFirebaseDataException.class)
-                .assertNotComplete()
-                .dispose();
+                .assertNotComplete();
     }
 
     @Test
@@ -188,9 +184,8 @@ public class RxFirebaseDatabaseTest {
 
         testObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(childData))
-                .assertNotComplete()
-                .dispose();
+                .assertValue(childData)
+                .assertNotComplete();
     }
 
     @Test
@@ -208,8 +203,7 @@ public class RxFirebaseDatabaseTest {
 
         testObserver.assertNoErrors()
                 .assertValueCount(2)
-                .assertComplete()
-                .dispose();
+                .assertComplete();
     }
 
     @Test
@@ -226,9 +220,8 @@ public class RxFirebaseDatabaseTest {
 
         testObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(childData))
-                .assertComplete()
-                .dispose();
+                .assertValue(childData)
+                .assertComplete();
     }
 
     @Test
@@ -244,8 +237,7 @@ public class RxFirebaseDatabaseTest {
 
         testObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertComplete()
-                .dispose();
+                .assertComplete();
     }
 
     @Test
@@ -267,7 +259,7 @@ public class RxFirebaseDatabaseTest {
 
         testObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(childDataMap))
+                .assertValue(childDataMap)
                 .dispose();
     }
 
@@ -284,9 +276,8 @@ public class RxFirebaseDatabaseTest {
 
         testObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(childEventAdded))
-                .assertNotComplete()
-                .dispose();
+                .assertValue(childEventAdded)
+                .assertNotComplete();
     }
 
     @Test
@@ -302,9 +293,8 @@ public class RxFirebaseDatabaseTest {
 
         testObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(childEventChanged))
-                .assertNotComplete()
-                .dispose();
+                .assertValue(childEventChanged)
+                .assertNotComplete();
     }
 
     @Test
@@ -320,9 +310,8 @@ public class RxFirebaseDatabaseTest {
 
         testObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(childEventRemoved))
-                .assertNotComplete()
-                .dispose();
+                .assertValue(childEventRemoved)
+                .assertNotComplete();
     }
 
     @Test
@@ -338,9 +327,8 @@ public class RxFirebaseDatabaseTest {
 
         testObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(childEventMoved))
-                .assertNotComplete()
-                .dispose();
+                .assertValue(childEventMoved)
+                .assertNotComplete();
     }
 
     @Test
@@ -355,8 +343,7 @@ public class RxFirebaseDatabaseTest {
         argument.getValue().onCancelled(DatabaseError.fromCode(DatabaseError.DISCONNECTED));
 
         testObserver.assertError(RxFirebaseDataException.class)
-                .assertNotComplete()
-                .dispose();
+                .assertNotComplete();
     }
 
     @Test
@@ -371,13 +358,12 @@ public class RxFirebaseDatabaseTest {
 
         testObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(childDataList))
-                .assertNotComplete()
-                .dispose();
+                .assertValue(childDataList)
+                .assertNotComplete();
     }
 
     @Test
-    public void testObserveListWithDataSnapshotCustomMapper() throws Exception {
+    public void testObserveListWithDataSnapshotCustomMapper() throws Throwable {
         //noinspection unchecked
         Function<DataSnapshot, ChildData> mapper = (Function<DataSnapshot, ChildData>) mock(Function.class);
         doReturn(childData).when(mapper).apply(eq(dataSnapshot));
@@ -394,9 +380,8 @@ public class RxFirebaseDatabaseTest {
 
         testObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(childDataList))
-                .assertNotComplete()
-                .dispose();
+                .assertValue(childDataList)
+                .assertNotComplete();
     }
 
     class ChildData {

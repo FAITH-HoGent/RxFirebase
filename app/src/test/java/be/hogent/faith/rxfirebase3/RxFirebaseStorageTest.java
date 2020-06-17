@@ -17,9 +17,9 @@ import org.mockito.MockitoAnnotations;
 
 import java.io.File;
 import java.io.InputStream;
-import java.util.Collections;
 
-import io.reactivex.observers.TestObserver;
+import be.hogent.faith.database.rxfirebase3.RxFirebaseStorage;
+import io.reactivex.rxjava3.observers.TestObserver;
 
 import static be.hogent.faith.rxfirebase3.RxTestUtil.NULL_FIREBASE_EXCEPTION;
 import static be.hogent.faith.rxfirebase3.RxTestUtil.setupTask;
@@ -131,9 +131,8 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(notNullbytes))
-                .assertComplete()
-                .dispose();
+                .assertValue(notNullbytes)
+                .assertComplete();
     }
 
     @Test
@@ -147,9 +146,8 @@ public class RxFirebaseStorageTest {
         verify(mockStorageRef).getBytes(20);
 
         storageTestObserver.assertError(NULL_FIREBASE_EXCEPTION)
-                .assertValueSet(Collections.singletonList(nullBytes))
-                .assertNotComplete()
-                .dispose();
+                .assertNoValues()
+                .assertNotComplete();
     }
 
     @Test
@@ -165,9 +163,8 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(uri))
-                .assertComplete()
-                .dispose();
+                .assertValue(uri)
+                .assertComplete();
     }
 
     @Test
@@ -183,9 +180,8 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(fileSnapshot))
-                .assertComplete()
-                .dispose();
+                .assertValue(fileSnapshot)
+                .assertComplete();
     }
 
     @Test
@@ -201,9 +197,8 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(fileSnapshot))
-                .assertComplete()
-                .dispose();
+                .assertValue(fileSnapshot)
+                .assertComplete();
     }
 
 
@@ -221,9 +216,8 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(metadata))
-                .assertComplete()
-                .dispose();
+                .assertValue(metadata)
+                .assertComplete();
     }
 
 
@@ -240,7 +234,7 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors();
         storageTestObserver.assertValueCount(1);
-        storageTestObserver.assertValueSet(Collections.singletonList(streamSnapshot));
+        storageTestObserver.assertValue(streamSnapshot);
         storageTestObserver.assertComplete();
         storageTestObserver.dispose();
     }
@@ -258,14 +252,12 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(streamSnapshot))
-                .assertComplete()
-                .dispose();
+                .assertValue(streamSnapshot)
+                .assertComplete();
     }
 
     @Test
     public void putBytes() {
-
         TestObserver<UploadTask.TaskSnapshot> storageTestObserver =
                 RxFirebaseStorage.putBytes(mockStorageRef, notNullbytes)
                         .test();
@@ -276,14 +268,12 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(uploadSnapshot))
-                .assertComplete()
-                .dispose();
+                .assertValue(uploadSnapshot)
+                .assertComplete();
     }
 
     @Test
     public void putBytesNoData() {
-
         TestObserver<UploadTask.TaskSnapshot> storageTestObserver =
                 RxFirebaseStorage.putBytes(mockStorageRef, nullBytes)
                         .test();
@@ -293,14 +283,12 @@ public class RxFirebaseStorageTest {
         verify(mockStorageRef).putBytes(nullBytes);
 
         storageTestObserver.assertError(NULL_FIREBASE_EXCEPTION)
-                .assertValueSet(Collections.singletonList(uploadSnapshot))
-                .assertNotComplete()
-                .dispose();
+                .assertNoValues()
+                .assertNotComplete();
     }
 
     @Test
     public void putBytesMetadata() {
-
         TestObserver<UploadTask.TaskSnapshot> storageTestObserver =
                 RxFirebaseStorage.putBytes(mockStorageRef, notNullbytes, metadata)
                         .test();
@@ -313,9 +301,8 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(uploadSnapshot))
-                .assertComplete()
-                .dispose();
+                .assertValue(uploadSnapshot)
+                .assertComplete();
     }
 
     @Test
@@ -331,9 +318,8 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(uploadSnapshot))
-                .assertComplete()
-                .dispose();
+                .assertValue(uploadSnapshot)
+                .assertComplete();
     }
 
     @Test
@@ -349,9 +335,8 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(uploadSnapshot))
-                .assertComplete()
-                .dispose();
+                .assertValue(uploadSnapshot)
+                .assertComplete();
     }
 
     @Test
@@ -367,9 +352,8 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(uploadSnapshot))
-                .assertComplete()
-                .dispose();
+                .assertValue(uploadSnapshot)
+                .assertComplete();
     }
 
     @Test
@@ -385,9 +369,8 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(uploadSnapshot))
-                .assertComplete()
-                .dispose();
+                .assertValue(uploadSnapshot)
+                .assertComplete();
     }
 
     @Test
@@ -403,9 +386,8 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(uploadSnapshot))
-                .assertComplete()
-                .dispose();
+                .assertValue(uploadSnapshot)
+                .assertComplete();
     }
 
     @Test
@@ -421,9 +403,8 @@ public class RxFirebaseStorageTest {
 
         storageTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(metadata))
-                .assertComplete()
-                .dispose();
+                .assertValue(metadata)
+                .assertComplete();
     }
 
     @Test
@@ -439,7 +420,6 @@ public class RxFirebaseStorageTest {
         verify(mockStorageRef).delete();
 
         storageTestObserver.assertNoErrors()
-                .assertComplete()
-                .dispose();
+                .assertComplete();
     }
 }

@@ -8,10 +8,8 @@ buildscript {
         firebase_firestore_version='21.4.3'
         firebase_functions_version='19.0.2'
         firebase_remote_version='19.1.4'
-        support_version = "28.0.3"
     }
 }
-apply plugin: 'com.android.library'
 apply plugin: 'com.android.library'
 
 android {
@@ -22,14 +20,14 @@ android {
         exclude 'META-INF/NOTICE'
     }
 
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 29
+    buildToolsVersion "30.0.0"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 28
-        versionCode 6
-        versionName "1.5.5"
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.0"
         consumerProguardFiles 'consumer-proguard-rules.pro'
     }
 }

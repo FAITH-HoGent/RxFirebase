@@ -138,7 +138,7 @@ public class RxFirestoreTest {
         testObserver
             .assertNoErrors()
             .assertValueCount(1)
-            .assertValueSet(Collections.singletonList(documentSnapshot))
+            .assertValue(documentSnapshot)
             .assertComplete();
     }
 
@@ -171,7 +171,7 @@ public class RxFirestoreTest {
         testObserver
             .assertNoErrors()
             .assertValueCount(1)
-            .assertValueSet(Collections.singletonList(childData))
+            .assertValue(childData)
             .assertComplete();
     }
 
@@ -204,7 +204,7 @@ public class RxFirestoreTest {
         testObserver
             .assertNoErrors()
             .assertValueCount(1)
-            .assertValueSet(Collections.singletonList(querySnapshot))
+            .assertValue(querySnapshot)
             .assertComplete();
     }
 
@@ -269,7 +269,7 @@ public class RxFirestoreTest {
         testObserver
             .assertNoErrors()
             .assertValueCount(1)
-            .assertValueSet(Collections.singletonList(querySnapshot))
+            .assertValue(querySnapshot)
             .assertComplete();
     }
 
@@ -348,8 +348,7 @@ public class RxFirestoreTest {
         verify(documentReference).update(updateMap);
 
         storageTestObserver.assertNoErrors()
-            .assertComplete()
-            .dispose();
+            .assertComplete();
     }
 
 
@@ -381,8 +380,7 @@ public class RxFirestoreTest {
         verify(documentReference).delete();
 
         storageTestObserver.assertNoErrors()
-            .assertComplete()
-            .dispose();
+            .assertComplete();
     }
 
     @Test

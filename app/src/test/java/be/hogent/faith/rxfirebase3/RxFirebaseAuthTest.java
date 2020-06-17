@@ -114,7 +114,7 @@ public class RxFirebaseAuthTest {
         authTestObserver
                 .assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(authResult))
+                .assertValue(authResult)
                 .assertComplete();
     }
 
@@ -146,9 +146,8 @@ public class RxFirebaseAuthTest {
 
         authTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(authResult))
-                .assertComplete()
-                .dispose();
+                .assertValue(authResult)
+                .assertComplete();
     }
 
     @Test
@@ -163,8 +162,7 @@ public class RxFirebaseAuthTest {
         verify(firebaseAuth).createUserWithEmailAndPassword(ANY_EMAIL, ANY_PASSWORD);
 
         authTestObserver.assertError(EXCEPTION)
-                .assertNotComplete()
-                .dispose();
+                .assertNotComplete();
     }
 
     @Test
@@ -181,9 +179,8 @@ public class RxFirebaseAuthTest {
 
         authTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(authResult))
-                .assertComplete()
-                .dispose();
+                .assertValue(authResult)
+                .assertComplete();
     }
 
     @Test
@@ -198,8 +195,7 @@ public class RxFirebaseAuthTest {
         verify(firebaseAuth).signInWithEmailAndPassword(eq(ANY_EMAIL), eq(ANY_PASSWORD));
 
         authTestObserver.assertError(EXCEPTION)
-                .assertNotComplete()
-                .dispose();
+                .assertNotComplete();
     }
 
     @Test
@@ -216,9 +212,8 @@ public class RxFirebaseAuthTest {
 
         authTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(authResult))
-                .assertComplete()
-                .dispose();
+                .assertValue(authResult)
+                .assertComplete();
     }
 
     @Test
@@ -233,8 +228,7 @@ public class RxFirebaseAuthTest {
         verify(firebaseAuth).signInWithCredential(authCredential);
 
         authTestObserver.assertError(EXCEPTION)
-                .assertNotComplete()
-                .dispose();
+                .assertNotComplete();
     }
 
     @Test
@@ -251,9 +245,8 @@ public class RxFirebaseAuthTest {
 
         authTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(authResult))
-                .assertComplete()
-                .dispose();
+                .assertValue(authResult)
+                .assertComplete();
     }
 
     @Test
@@ -268,8 +261,7 @@ public class RxFirebaseAuthTest {
         verify(firebaseAuth).signInWithCustomToken(eq(ANY_TOKEN));
 
         authTestObserver.assertError(EXCEPTION)
-                .assertNotComplete()
-                .dispose();
+                .assertNotComplete();
     }
 
     @Test
@@ -286,9 +278,8 @@ public class RxFirebaseAuthTest {
 
         authTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(providerQueryResult))
-                .assertComplete()
-                .dispose();
+                .assertValue(providerQueryResult)
+                .assertComplete();
     }
 
     @Test
@@ -305,9 +296,8 @@ public class RxFirebaseAuthTest {
 
         authTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(actionCodeResult))
-                .assertComplete()
-                .dispose();
+                .assertValue(actionCodeResult)
+                .assertComplete();
     }
 
     @Test
@@ -322,8 +312,7 @@ public class RxFirebaseAuthTest {
         verify(firebaseAuth).fetchSignInMethodsForEmail(ANY_EMAIL);
 
         authTestObserver.assertError(EXCEPTION)
-                .assertNotComplete()
-                .dispose();
+                .assertNotComplete();
     }
 
     @Test
@@ -340,9 +329,8 @@ public class RxFirebaseAuthTest {
 
         authTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(RESULT_CODE))
-                .assertComplete()
-                .dispose();
+                .assertValue(RESULT_CODE)
+                .assertComplete();
     }
 
     @Test
@@ -356,9 +344,7 @@ public class RxFirebaseAuthTest {
         verify(firebaseAuth).sendPasswordResetEmail(eq(ANY_EMAIL));
 
         authTestObserver.assertNoErrors()
-                .assertValueSet(Collections.singletonList(voidTask))
-                .assertComplete()
-                .dispose();
+                .assertComplete();
     }
 
     @Test
@@ -372,9 +358,7 @@ public class RxFirebaseAuthTest {
         verify(firebaseAuth).confirmPasswordReset(eq(ANY_CODE), eq(ANY_PASSWORD));
 
         authTestObserver.assertNoErrors()
-                .assertValueSet(Collections.singletonList(voidTask))
-                .assertComplete()
-                .dispose();
+                .assertComplete();
     }
 
     @Test
@@ -388,9 +372,7 @@ public class RxFirebaseAuthTest {
         verify(firebaseAuth).applyActionCode(eq(ANY_CODE));
 
         authTestObserver.assertNoErrors()
-                .assertValueSet(Collections.singletonList(voidTask))
-                .assertComplete()
-                .dispose();
+                .assertComplete();
     }
 
     @Test
@@ -405,8 +387,7 @@ public class RxFirebaseAuthTest {
         verify(firebaseAuth).sendPasswordResetEmail(eq(ANY_EMAIL));
 
         authTestObserver.assertError(EXCEPTION)
-                .assertNotComplete()
-                .dispose();
+                .assertNotComplete();
     }
 
     @Test
@@ -422,8 +403,7 @@ public class RxFirebaseAuthTest {
 
         authTestObserver.assertNoErrors()
                 .assertValueCount(1)
-                .assertValueSet(Collections.singletonList(firebaseAuth))
-                .assertNotComplete()
-                .dispose();
+                .assertValue(firebaseAuth)
+                .assertNotComplete();
     }
 }
